@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Личный Блог</title>
+    <!-- Подключаем файл стилей -->
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <h1>Мой Блог</h1>
+        <!-- Секретная кнопка-логотип для админа. Пока просто кнопка. -->
+        <button class="header__admin-btn" id="adminBtn">A</button>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="main">
+        <section class="posts" id="postsContainer">
+            <!-- Сюда мы будем динамически вставлять посты из JavaScript -->
+            <p>Постов пока нет... Но скоро будут!</p>
+        </section>
+    </main>
+
+    <!-- Модальное окно для ввода кода админа -->
+    <div class="modal" id="authModal">
+        <div class="modal__content">
+            <h2>Введите код доступа</h2>
+            <form id="authForm">
+                <input type="password" id="adminCode" placeholder="Секретный код" required>
+                <button type="submit">Войти</button>
+            </form>
+            <button class="modal__close" id="closeAuthModal">X</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно для создания поста (пока скрыто) -->
+    <div class="modal" id="postModal">
+        <div class="modal__content">
+            <h2>Создать новый пост</h2>
+            <form id="postForm">
+                <input type="file" id="postImage" accept="image/*,video/*" required>
+                <input type="text" id="postTitle" placeholder="Заголовок поста" required>
+                <textarea id="postText" placeholder="Текст поста..." required></textarea>
+                <input type="date" id="postDate" required>
+                <button type="submit">Опубликовать</button>
+            </form>
+            <button class="modal__close" id="closePostModal">X</button>
+        </div>
+    </div>
+
+    <!-- Подключаем JavaScript файл -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>
