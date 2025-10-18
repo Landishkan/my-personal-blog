@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Личный Блог</title>
+    <!-- Подключаем файл стилей -->
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <h1><u>Мой Блог</u></h1>
+        <!-- Секретная кнопка-логотип для админа. Пока просто кнопка. -->
+        <button class="header__admin-btn" id="adminBtn">A</button>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="main">
+        <section class="posts" id="postsContainer">
+            <!-- Сюда мы будем динамически вставлять посты из JavaScript -->
+            <p>Постов пока нет... Но скоро будут!</p>
+        </section>
+    </main>
+
+   <!-- Модальное окно для ввода кода админа -->
+<div class="modal" id="authModal">
+    <div class="modal__content">
+        <h2>Введите код доступа</h2>
+        <form id="authForm" class="auth-form">
+            <div class="form-group">
+                <input type="password" id="adminCode" class="form-control" placeholder="Секретный код" required>
+            </div>
+            <button type="submit" class="btn btn--primary">Войти</button>
+        </form>
+        <button class="modal__close" id="closeAuthModal">×</button>
+    </div>
+</div>
+
+<!-- Модальное окно для создания поста -->
+<div class="modal" id="postModal">
+    <div class="modal__content">
+        <h2>Создать новый пост</h2>
+        <form id="postForm" class="post-form">
+            <div class="form-group">
+    <label for="postImage">Изображение или видео</label>
+    <div class="file-input-wrapper">
+        <input type="file" id="postImage" class="form-control" accept="image/*" required>
+        <label for="postImage" class="file-input-label" id="fileInputLabel">
+            📁 Выберите файл изображения
+            <div class="file-name" id="fileName">Файл не выбран</div>
+        </label>
+    </div>
+</div>
+            <div class="form-group">
+                <label for="postTitle">Заголовок поста</label>
+                <input type="text" id="postTitle" class="form-control" placeholder="Введите заголовок..." required>
+            </div>
+            <div class="form-group">
+                <label for="postText">Текст поста</label>
+                <textarea id="postText" class="form-control" placeholder="Напишите содержимое поста..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="postDate">Дата публикации</label>
+                <input type="date" id="postDate" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn--primary">Опубликовать</button>
+        </form>
+        <button class="modal__close" id="closePostModal">×</button>
+    </div>
+</div>
+
+
+ 
+</body>
+ <script type="module" src="scripts/main.js"></script>
+</html>
